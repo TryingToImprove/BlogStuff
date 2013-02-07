@@ -33,7 +33,7 @@ That code is not pretty or easy to bugfix. If you have worked with ASP.net MVC a
 To do this I need 2 dependencies
     
 - System.Web.Razor
-- RazorEngine (http://nuget.org/packages/RazorEngine/)
+- RazorEngine (http://nuget.org/packages/RazorEngine/) 
 
 When I have added these 2 dependencies to my project I am ready to create some sort of loader.
 
@@ -50,6 +50,10 @@ Visual Studio is not very happy to have razor-files when you not develop a MVC p
       </system.web>
 
 Visual Studio is still not happy with the razor-file, and can not find "@Model". That is because "@Model" is built-in as a extension in the MVC-assembly, but you can still use "@Model" and "@model" but I could not get intellisense support. :/
+
+**To solve this problem you can rename your razorfile something other than .cshtml/.vbhtml, and change the extension in the buildproviders**
+
+If you run on Medium Trust then take a look here: http://razorengine.codeplex.com/wikipage?title=Configuring%20RazorEngine%20for%20ASP.NET%20Medium%20Trust
 
 ### Razor Loader
 I have built a small class that can read a razor-file and return the generated HTML:
@@ -100,4 +104,4 @@ Now I am ready to use the razor loader in a ContentModule:
     }
 
 # Conclusion
-Do it! It seems to work.. ;-)
+Do it! It seems to work.. ;-) There are some missing features in RazorEngine, but basic works.
