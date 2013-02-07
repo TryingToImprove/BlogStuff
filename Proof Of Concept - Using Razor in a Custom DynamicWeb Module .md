@@ -19,6 +19,9 @@ Normally you would write code as this:
     strBuiler.Append("</ul>");
 
 That code is not pretty or easy to bugfix. If you have worked with ASP.net MVC and Razor, then the result will look familiar:
+    
+    @using CustomModules.HelloWorld //normal using
+    @inherits RazorEngine.Templating.TemplateBase<NameMViewodel> //Setting the Model
 
     <h1>@Model.Headline</h1>
     <hr />
@@ -48,10 +51,6 @@ Visual Studio is not very happy to have razor-files when you not develop a MVC p
           </buildProviders>
         </compilation>
       </system.web>
-
-Visual Studio is still not happy with the razor-file, and can not find "@Model". That is because "@Model" is built-in as a extension in the MVC-assembly, but you can still use "@Model" and "@model" but I could not get intellisense support. :/
-
-**To solve this problem you can rename your razorfile something other than .cshtml/.vbhtml, and change the extension in the buildproviders**
 
 If you run on Medium Trust then take a look here: http://razorengine.codeplex.com/wikipage?title=Configuring%20RazorEngine%20for%20ASP.NET%20Medium%20Trust
 
