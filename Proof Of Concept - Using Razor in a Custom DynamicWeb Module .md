@@ -104,3 +104,9 @@ Now I am ready to use the razor loader in a ContentModule:
 
 # Conclusion
 Do it! It seems to work.. ;-) There are some missing features in RazorEngine, but basic works.
+
+
+### Update 1
+The RazorEngine can be very slow if you not specify a cacheName when you parse the Razor code..
+
+    Razor.Parse(razorTemplate, viewModel, cacheName);
